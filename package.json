@@ -101,7 +101,7 @@
 			"eslint --fix",
 			"git add"
 		],
-		".ts": [
+		"*.ts": [
 			"tslint -p ./ --fix && tslint -p ./test --fix",
 			"git add"
 		],
