@@ -73,6 +73,11 @@ export interface PluginOptions {
   enableTracing?: boolean;
 
   /**
+   * Tracing options
+   */
+  tracingOptions?: {};
+
+  /**
    * If this parameter is present, zPages server is enabled
    * @default false
    */

@@ -6,6 +6,7 @@ import * as _tracing from '@opencensus/nodejs';
 import { PluginOptions, FastifyOpenCensus } from './plugin';
 import { collectMetricsForUrl, sinceInMilliseconds } from './util';
 import OpenCensusMetrics from './stat';
+import {collectDefaultMetrics} from 'opencensus-default-metrics';
 
 declare module 'fastify' {
   interface FastifyInstance<
@@ -48,41 +49,30 @@ const fastifyOpenCensusPlugin: Plugin<
   {
     enableDefaultMetrics = true,
     enableStats = true,
-    enableTracing = false,   
-    zPagesOptions, 
+    enableTracing = false,
+    tracingOptions,
+    zPagesOptions,
     stats = globalStats,
-    tracing,
+    tracing = _tracing,
     metricsExporter,
     tracingExporter,
     groupStatusCodes = false,
     pluginName = 'opencensus',
     interval = 5000,
-    blacklist,    
+    blacklist,
     prefix,
     metrics = {}
   }: PluginOptions = {},
   next: fastifyPlugin.nextCallback
-) {    
-    const openCensusMetrics: OpenCensusMetrics = new OpenCensusMetrics(stats, tracing || _tracing, {metricsExporter, tracingExporter});   
+) {
+    const openCensusMetrics: OpenCensusMetrics = new OpenCensusMetrics(stats, tracing, {metricsExporter, tracingExporter});
 
     if (enableTracing) {
-      openCensusMetrics.startTracing();
-    }    
-   
-    if (enableStats) {      
-      openCensusMetrics.createMetrics(metrics, prefix || '');
+      openCensusMetrics.startTracing(tracingOptions);
+    }
 
-      if (endpoint) {
-        fastify.route({
-          url: endpoint,
-          method: 'GET',
-          schema: { hide: true },
-          handler: (_, reply) => {
-            const data = stats.getMetrics();
-            reply.type('text/plain').send(JSON.stringify(data));
-          },
-        });
-      }
+    if (enableStats) {
+      openCensusMetrics.createMetrics(metrics, prefix || '');
 
       fastify.addHook('onRequest', (request, _, next) => {
         if (request.req.url && collectMetricsForUrl(blacklist, request.req.url)) {
@@ -113,17 +103,17 @@ const fastifyOpenCensusPlugin: Plugin<
     if (enableDefaultMetrics) {
       const defaultOpts = {
         timeout: interval,
-        register : stats,
+        stats : stats,
         prefix
       };
-      /*client.collectDefaultMetrics(defaultOpts); */
-    }    
+      collectDefaultMetrics(defaultOpts);
+    }
 
     if (zPagesOptions) {
       openCensusMetrics.startZPagesServer(zPagesOptions);
     }
 
-    const plugin: FastifyOpenCensus = { client: stats, tracing: tracing || _tracing };
+    const plugin: FastifyOpenCensus = { client: stats, tracing};
     plugin.clearRegister = stats.clear;
     fastify.decorate(pluginName, plugin);
 

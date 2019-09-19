@@ -1,21 +1,24 @@
 # fastify-opencensus
 
-[![Node version](https://img.shields.io/node/v/opencensus-default-metrics)]()
-[![Downloads Count](https://img.shields.io/npm/dm/opencensus-default-metrics)]()
-[![Build Status](https://travis-ci.org/rhaymo/opencensus-node-default-metrics.svg?branch=master)](https://travis-ci.org/rhaymo/opencensus-node-default-metrics)
-[![Known Vulnerabilities](https://snyk.io//test/github/rhaymo/opencensus-node-default-metrics/badge.svg?targetFile=package.json)](https://snyk.io//test/github/rhaymo/opencensus-node-default-metrics?targetFile=package.json)
-[![Coverage Status](https://coveralls.io/repos/github/rhaymo/opencensus-node-default-metrics/badge.svg?branch=master)](https://coveralls.io/github/rhaymo/opencensus-node-default-metrics?branch=master)
-[![License](https://img.shields.io/github/license/rhaymo/opencensus-node-default-metrics)](https://github.com/rhaymo/opencensus-node-default-metrics/blob/master/LICENSE)
+[![Node version](https://img.shields.io/node/v/fastify-opencensus)]()
+[![Downloads Count](https://img.shields.io/npm/dm/fastify-opencensus)]()
+[![Build Status](https://travis-ci.org/rhaymo/fastify-opencensus.svg?branch=master)](https://travis-ci.org/rhaymo/fastify-opencensus)
+[![Known Vulnerabilities](https://snyk.io//test/github/rhaymo/fastify-opencensus/badge.svg?targetFile=package.json)](https://snyk.io//test/github/rhaymo/fastify-opencensus?targetFile=package.json)
+[![Coverage Status](https://coveralls.io/repos/github/rhaymo/fastify-opencensus/badge.svg?branch=master)](https://coveralls.io/github/rhaymo/fastify-opencensus?branch=master)
+[![License](https://img.shields.io/github/license/rhaymo/fastify-opencensus)](https://github.com/rhaymo/fastify-opencensus/blob/master/LICENSE)
 
 [Opencensus](https://opencensus.io/) metrics and traces collector for Fastify.
 
 This module is inspired and based on the [fastify-metrics](https://gitlab.com/m03geek/fastify-metrics) plugin.
 
-This plugin also adds 2 http metrics for your routes:
-* Requests duration histogram
-* Requests duration summary
+This plugin also adds 3 http metrics for your routes:
+
+- Requests duration distribution
+- Requests duration summary
+- Requests count
 
 ## ToC
+
 - [fastify-opencensus](#fastify-opencensus)
   - [ToC](#ToC)
   - [Fastify support](#Fastify-support)
@@ -44,13 +47,14 @@ npm i fastify-opencensus --save
 
 ## Features and requirements
 
-* Collects default server metrics (see [opencensus-default-metrics](https://github.com/rhaymo/opencensus-node-default-metrics));
-* Collects route response timings
+- Collects default server metrics (see [opencensus-default-metrics](https://github.com/rhaymo/opencensus-node-default-metrics)) and tracing info;
+- Collects route response timings
+- By default, metrics and tracing info are collected into the global instance of opencensus required by this package. If you want to use another opencensus version, you have to pass in these instance using the `stats` and `tracing` options field.
 
---- 
+---
 
-* Requires fastify `>=2.0.0`.
-* Node.js `>=8.9.0`.
+- Requires fastify `>=2.0.0`.
+- Node.js `>=8.9.0`.
 
 <sub>[Back to top](#toc)</sub>
 
@@ -63,32 +67,34 @@ const fastify = require('fastify');
 const app = fastify();
 
 const metricsPlugin = require('fastify-opencensus');
-app.register(metricsPlugin, {endpoint: '/metrics'});
+app.register(metricsPlugin, { interval: 3000 });
 ```
 
-It also exports opencensus stats to fastify instance `fastify.opencensus.client` which you may use it in your routes.
+It also exports opencensus stats instance to fastify instance `fastify.opencensus.client` which you may use it in your routes.
+
+See example folder for other examples.
 
 <sub>[Back to top](#toc)</sub>
 
 ### Plugin options
 
-|  parameter  |  type  |  description   |  default  |
-|-------------|--------|----------------|-----------|
-| `enableDefaultMetrics` | Boolean | Enables collection of default metrics. | `true` |
-| `enableStats` | Boolean | Enables collection of fastify metrics. | `true` |
-| `enableTracing` | Boolean | Enables collection of traces. | `false` |
-| `zPagesOptions` | Object | If set, a zPagesServer is launched (see [docs](https://opencensus.io/zpages/node/)). Useful for debug/diagnostics without having to depend on any backend to examine traces or metrics  | `undefined` |
-| `stats` | Object | Custom opencensus metrics registry. | `The global instance of opencensus` |
-| `tracing` | Object | Custom opencensus tracing registry. | `The global instance of opencensus` |
-| `metricsExporter` | Array<Object> | Array of Opencensus metrics exporter | `undefined` |
-| `tracingExporter` | Array<Object> | Array of Opencensus tracing exporter | `undefined` |
-| `groupStatusCodes` | Boolean | Groups status codes (e.g. 2XX) if `true` | `false` |
-| `pluginName` | String | Change name which you'll use to access opencensus registry instance in fastify. | `opencensus` |
-| `interval` | Number | Default metrics collection interval in ms. | `5000` |
-| `blacklist` | String, RegExp, String[] | Skip metrics collection for blacklisted routes | `undefined` |
-| `prefix` | String | Custom default metrics prefix. | `""` |
-| `metrics` | Object | Allows override default metrics config. See section below. | `{}` |
-
+| parameter              | type                     | description                                                                                                                                                                         | default      |
+| ---------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `enableDefaultMetrics` | Boolean                  | Enables collection of node default metrics.                                                                                                                                         | `true`       |
+| `enableStats`          | Boolean                  | Enables collection of fastify metrics.                                                                                                                                              | `true`       |
+| `enableTracing`        | Boolean                  | Enables collection of traces.                                                                                                                                                       | `false`      |
+| `tracingOptions`       | Object                   | Tracing options if enableTracing is true (see [opencensus docs](https://github.com/census-instrumentation/opencensus-node/tree/master/packages/opencensus-nodejs#tracing-options)). | `undefined`  |
+| `zPagesOptions`        | Object                   | If set, a zPagesServer is launched (see [docs](https://opencensus.io/zpages/node/)). Useful for debug/diagnostics without having to depend on any backend to examine traces.        | `undefined`  |
+| `stats`                | Object                   | Custom opencensus metrics instance.                                                                                                                                                 | `undefined`  |
+| `tracing`              | Object                   | Custom opencensus tracing instance.                                                                                                                                                 | `undefined`  |
+| `metricsExporter`      | Array<Object>            | Array of Opencensus metrics exporter                                                                                                                                                | `undefined`  |
+| `tracingExporter`      | Array<Object>            | Array of Opencensus tracing exporter                                                                                                                                                | `undefined`  |
+| `groupStatusCodes`     | Boolean                  | Groups status codes (e.g. 2XX) if `true`                                                                                                                                            | `false`      |
+| `pluginName`           | String                   | Change name which you'll use to access opencensus registry instance in fastify.                                                                                                     | `opencensus` |
+| `interval`             | Number                   | Default metrics collection interval in ms.                                                                                                                                          | `5000`       |
+| `blacklist`            | String, RegExp, String[] | Skip metrics collection for blacklisted routes                                                                                                                                      | `undefined`  |
+| `prefix`               | String                   | Custom default metrics prefix.                                                                                                                                                      | `""`         |
+| `metrics`              | Object                   | Allows override default metrics config. See section below.                                                                                                                          | `{}`         |
 
 #### Metrics details
 
@@ -106,7 +112,7 @@ Default values:
   sum: {
     name: 'http_sum_request_duration_seconds',
     help: 'Sum of durations of http requests',
-    labelNames: ['status_code', 'method', 'route']    
+    labelNames: ['status_code', 'method', 'route']
   },
   count: {
     name: 'http_request_count',
@@ -140,11 +146,11 @@ app.register(metricsPlugin, {metrics: {
 
 The following table shows what metrics will be available in Prometheus. Note suffixes like `_bucket`, `_sum`, `_count` are added automatically.
 
-|  metric  |  labels  |  description  |
-|----------|----------|---------------|
-| `http_request_count` | `method`, `route`, `status_code` | Requests total count |
-| `http_request_duration_seconds` | `method`, `route`, `status_code` | Requests durations by bucket |
-| `http_sum_request_duration_seconds` | `method`, `route`, `status_code` | Requests duration sum |
+| metric                              | labels                           | description                  |
+| ----------------------------------- | -------------------------------- | ---------------------------- |
+| `http_request_count`                | `method`, `route`, `status_code` | Requests total count         |
+| `http_request_duration_seconds`     | `method`, `route`, `status_code` | Requests durations by bucket |
+| `http_sum_request_duration_seconds` | `method`, `route`, `status_code` | Requests duration sum        |
 
 <sub>[Back to top](#toc)</sub>
 
@@ -162,7 +168,7 @@ See [changelog](CHANGELOG.md).
 
 ## See also
 
-* [opencensus-default-metrics](https://github.com/rhaymo/opencensus-node-default-metrics) - collector of node default metrics using opencensus
+- [opencensus-default-metrics](https://github.com/rhaymo/opencensus-node-default-metrics) - collector of node default metrics using opencensus
 
 <sub>[Back to top](#toc)</sub>
 

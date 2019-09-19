@@ -27,7 +27,7 @@ class OpenCensusMetrics {
                 exporters.metricsExporter.forEach((metricExporter)=>{this.stats.registerExporter(metricExporter);});
             }
             if (exporters.tracingExporter) {
-                exporters.tracingExporter.forEach((tracingExporter)=>{this.tracing.registerExporter(tracingExporter).start();});
+                exporters.tracingExporter.forEach((tracingExporter)=>{this.tracing.registerExporter(tracingExporter);});
             }
         }
 
@@ -65,7 +65,7 @@ class OpenCensusMetrics {
             this.mLatency,
             AggregationType.SUM,
             [methodTagKey, statusTagKey, errorTagKey],
-            metrics.sum && metrics.sum.desc || 'Sum durations of http request'
+            metrics.sum && metrics.sum.desc || 'Sum of durations of http request'
         );
         this.stats.registerView(httpRequestDurationSum);
     }
@@ -82,8 +82,8 @@ class OpenCensusMetrics {
         }], tags);
     }
 
-    startTracing() {
-        this.tracing.start();
+    startTracing(tracingOptions) {
+        this.tracing.start(tracingOptions);
     }
 
     startZPagesServer(options) {

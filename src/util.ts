@@ -16,6 +16,6 @@ export const collectMetricsForUrl = (blacklist: RegExp | Array<string> | string 
   return false;
 };
 
-export function sinceInMilliseconds(startNanoseconds: number) {  
+export function sinceInMilliseconds(startNanoseconds: number) {
   return (process.hrtime()[1] - startNanoseconds) / 1e6;
 }

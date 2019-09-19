@@ -1,0 +1,33 @@
+language: node_js
+
+node_js:
+  - '12'
+  - '11'
+  - '10'
+  - '8.9'
+
+script:
+  - npm run test
+  - npm run build
+
+branches:
+  except:
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+
+jobs:
+  include:
+    - stage: test
+      after_success: 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
+    - stage: npm release
+      script: echo "Deploying to npm ..."
+      deploy:
+        provider: npm
+        email: $MAIL_ADDRESS
+        api_key: $NPM_API_KEY
+        on:
+          condition: -n $(git tag --points-at $TRAVIS_COMMIT)
+
+stages:
+  - name: test
+  - name: npm release
+    if: branch = master AND type = push
