@@ -52,14 +52,11 @@
 	},
 	"homepage": "https://github.com/rhaymo/fastify-opencensus#README",
 	"dependencies": {
-		"@opencensus/exporter-zipkin": "0.0.17",
-		"@opencensus/exporter-zpages": "0.0.17",
-		"@opencensus/nodejs": "0.0.17",
+		"@opencensus/core": "^0.0.17",
 		"fastify-plugin": "^1.6.0",
 		"opencensus-default-metrics": "^0.0.2"
 	},
 	"devDependencies": {
-		"@opencensus/exporter-prometheus": "0.0.17",
 		"@types/jest": "^24.0.15",
 		"@types/node": "^12.0.0",
 		"eslint": "^6.0.0",

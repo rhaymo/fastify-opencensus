@@ -1,5 +1,5 @@
 import {
-    Stats, MeasureUnit, AggregationType, TagMap, Measure, View, Tracing, StatsEventListener
+    Stats, MeasureUnit, AggregationType, TagMap, Measure, View, StatsEventListener
 } from '@opencensus/core';
 import { Metrics } from './plugin';
 
