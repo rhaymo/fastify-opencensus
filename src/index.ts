@@ -2,7 +2,6 @@ import * as http from 'http';
 import { FastifyInstance, Plugin } from 'fastify';
 import fastifyPlugin from 'fastify-plugin';
 import { globalStats} from '@opencensus/core';
-import * as _tracing from '@opencensus/nodejs';
 import { PluginOptions, FastifyOpenCensus } from './plugin';
 import { collectMetricsForUrl, sinceInMilliseconds } from './util';
 import OpenCensusMetrics from './stat';
@@ -49,13 +48,8 @@ const fastifyOpenCensusPlugin: Plugin<
   {
     enableDefaultMetrics = true,
     enableStats = true,
-    enableTracing = false,
-    tracingOptions,
-    zPagesOptions,
     stats = globalStats,
-    tracing = _tracing,
     metricsExporter,
-    tracingExporter,
     groupStatusCodes = false,
     pluginName = 'opencensus',
     interval = 5000,
@@ -65,11 +59,7 @@ const fastifyOpenCensusPlugin: Plugin<
   }: PluginOptions = {},
   next: fastifyPlugin.nextCallback
 ) {
-    const openCensusMetrics: OpenCensusMetrics = new OpenCensusMetrics(stats, tracing, {metricsExporter, tracingExporter});
-
-    if (enableTracing) {
-      openCensusMetrics.startTracing(tracingOptions);
-    }
+    const openCensusMetrics: OpenCensusMetrics = new OpenCensusMetrics(stats, metricsExporter);
 
     if (enableStats) {
       openCensusMetrics.createMetrics(metrics, prefix || '');
@@ -109,11 +99,7 @@ const fastifyOpenCensusPlugin: Plugin<
       collectDefaultMetrics(defaultOpts);
     }
 
-    if (zPagesOptions) {
-      openCensusMetrics.startZPagesServer(zPagesOptions);
-    }
-
-    const plugin: FastifyOpenCensus = { client: stats, tracing};
+    const plugin: FastifyOpenCensus = { client: stats };
     plugin.clearRegister = stats.clear;
     fastify.decorate(pluginName, plugin);
 

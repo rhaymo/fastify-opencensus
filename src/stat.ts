@@ -7,30 +7,16 @@ const methodTagKey = { name: 'method' };
 const statusTagKey = { name: 'status_code' };
 const errorTagKey = { name: 'route' };
 
-interface Exporters {
-
-    metricsExporter?: Array<StatsEventListener>;
-
-    tracingExporter?: Array<Tracing['exporter']>;
-}
-
 class OpenCensusMetrics {
     mLatency: Measure;
     stats: Stats;
-    tracing: Tracing;
 
-    constructor(_stats: Stats, _tracing: Tracing, exporters?: Exporters) {
+    constructor(_stats: Stats, metricsExporters?: Array<StatsEventListener>) {
         this.stats = _stats;
-        this.tracing = _tracing;
-        if (exporters) {
-            if (exporters.metricsExporter) {
-                exporters.metricsExporter.forEach((metricExporter)=>{this.stats.registerExporter(metricExporter);});
-            }
-            if (exporters.tracingExporter) {
-                exporters.tracingExporter.forEach((tracingExporter)=>{this.tracing.registerExporter(tracingExporter);});
-            }
-        }
 
+        if (metricsExporters) {
+            metricsExporters.forEach((metricExporter) => { this.stats.registerExporter(metricExporter); });
+        }
     }
 
     createMetrics(metrics: Metrics, _prefix?: string): void {
@@ -82,6 +68,7 @@ class OpenCensusMetrics {
         }], tags);
     }
 
+    /*
     startTracing(tracingOptions) {
         this.tracing.start(tracingOptions);
     }
@@ -89,16 +76,16 @@ class OpenCensusMetrics {
     startZPagesServer(options) {
         const defaultOptions = {
             port: 8081,
-            startServer: true,
-            spanNames: ['predefined/span1', 'predefined/span2']
+            startServer: true
         };
 
         const _options = Object.assign(defaultOptions, options);
 
         const zpages = require('@opencensus/exporter-zpages');
         const exporter = new zpages.ZpagesExporter(_options);
-        this.tracing.registerExporter(exporter).start();
+        this.tracing.registerExporter(exporter);
     }
+    */
 }
 
 export = OpenCensusMetrics;

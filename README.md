@@ -7,11 +7,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/rhaymo/fastify-opencensus/badge.svg?branch=master)](https://coveralls.io/github/rhaymo/fastify-opencensus?branch=master)
 [![License](https://img.shields.io/github/license/rhaymo/fastify-opencensus)](https://github.com/rhaymo/fastify-opencensus/blob/master/LICENSE)
 
-[Opencensus](https://opencensus.io/) metrics and traces collector for Fastify.
+Metrics collector for Fastify based on [Opencensus](https://opencensus.io/) .
 
 This module is inspired and based on the [fastify-metrics](https://gitlab.com/m03geek/fastify-metrics) plugin.
 
-This plugin also adds 3 http metrics for your routes:
+This plugin adds 3 http metrics for your routes:
 
 - Requests duration distribution
 - Requests duration summary
@@ -47,9 +47,9 @@ npm i fastify-opencensus --save
 
 ## Features and requirements
 
-- Collects default server metrics (see [opencensus-default-metrics](https://github.com/rhaymo/opencensus-node-default-metrics)) and tracing info;
+- Collects default server metrics (see [opencensus-default-metrics](https://github.com/rhaymo/opencensus-node-default-metrics));
 - Collects route response timings
-- By default, metrics and tracing info are collected into the global instance of opencensus required by this package. If you want to use another opencensus version, you have to pass in these instance using the `stats` and `tracing` options field.
+- By default, metrics info are collected into the global instance of opencensus required by this package. If you want to use another opencensus version, you have to pass in this instance using the `stats` options field.
 
 ---
 
@@ -78,23 +78,18 @@ See example folder for other examples.
 
 ### Plugin options
 
-| parameter              | type                     | description                                                                                                                                                                         | default      |
-| ---------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| `enableDefaultMetrics` | Boolean                  | Enables collection of node default metrics.                                                                                                                                         | `true`       |
-| `enableStats`          | Boolean                  | Enables collection of fastify metrics.                                                                                                                                              | `true`       |
-| `enableTracing`        | Boolean                  | Enables collection of traces.                                                                                                                                                       | `false`      |
-| `tracingOptions`       | Object                   | Tracing options if enableTracing is true (see [opencensus docs](https://github.com/census-instrumentation/opencensus-node/tree/master/packages/opencensus-nodejs#tracing-options)). | `undefined`  |
-| `zPagesOptions`        | Object                   | If set, a zPagesServer is launched (see [docs](https://opencensus.io/zpages/node/)). Useful for debug/diagnostics without having to depend on any backend to examine traces.        | `undefined`  |
-| `stats`                | Object                   | Custom opencensus metrics instance.                                                                                                                                                 | `undefined`  |
-| `tracing`              | Object                   | Custom opencensus tracing instance.                                                                                                                                                 | `undefined`  |
-| `metricsExporter`      | Array<Object>            | Array of Opencensus metrics exporter                                                                                                                                                | `undefined`  |
-| `tracingExporter`      | Array<Object>            | Array of Opencensus tracing exporter                                                                                                                                                | `undefined`  |
-| `groupStatusCodes`     | Boolean                  | Groups status codes (e.g. 2XX) if `true`                                                                                                                                            | `false`      |
-| `pluginName`           | String                   | Change name which you'll use to access opencensus registry instance in fastify.                                                                                                     | `opencensus` |
-| `interval`             | Number                   | Default metrics collection interval in ms.                                                                                                                                          | `5000`       |
-| `blacklist`            | String, RegExp, String[] | Skip metrics collection for blacklisted routes                                                                                                                                      | `undefined`  |
-| `prefix`               | String                   | Custom default metrics prefix.                                                                                                                                                      | `""`         |
-| `metrics`              | Object                   | Allows override default metrics config. See section below.                                                                                                                          | `{}`         |
+| parameter              | type                     | description                                                                     | default      |
+| ---------------------- | ------------------------ | ------------------------------------------------------------------------------- | ------------ |
+| `enableDefaultMetrics` | Boolean                  | Enables collection of node default metrics.                                     | `true`       |
+| `enableStats`          | Boolean                  | Enables collection of fastify metrics.                                          | `true`       |
+| `stats`                | Object                   | Custom opencensus metrics instance.                                             | `undefined`  |
+| `metricsExporter`      | Array<Object>            | Array of Opencensus metrics exporter                                            | `undefined`  |
+| `groupStatusCodes`     | Boolean                  | Groups status codes (e.g. 2XX) if `true`                                        | `false`      |
+| `pluginName`           | String                   | Change name which you'll use to access opencensus registry instance in fastify. | `opencensus` |
+| `interval`             | Number                   | Default metrics collection interval in ms.                                      | `5000`       |
+| `blacklist`            | String, RegExp, String[] | Skip metrics collection for blacklisted routes                                  | `undefined`  |
+| `prefix`               | String                   | Custom default metrics prefix.                                                  | `""`         |
+| `metrics`              | Object                   | Allows override default metrics config. See section below.                      | `{}`         |
 
 #### Metrics details
 

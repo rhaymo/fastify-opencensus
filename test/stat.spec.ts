@@ -2,11 +2,10 @@ import 'jest';
 
 import OpenCensusMetrics from '../src/stat';
 import { globalStats } from '@opencensus/core';
-import * as _tracing from '@opencensus/nodejs';
 
 describe('OpenCensusMetrics', () => {
     test('createMetrics', async () => {
-        const openCensusMetrics: OpenCensusMetrics = new OpenCensusMetrics(globalStats, _tracing);
+        const openCensusMetrics: OpenCensusMetrics = new OpenCensusMetrics(globalStats);
         openCensusMetrics.createMetrics({}, 'myprefix_' );
         const metrics = globalStats.getMetrics();
       expect(metrics).toHaveLength(3);

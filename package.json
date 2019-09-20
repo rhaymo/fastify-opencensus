@@ -52,6 +52,7 @@
 	},
 	"homepage": "https://github.com/rhaymo/fastify-opencensus#README",
 	"dependencies": {
+		"@opencensus/exporter-zipkin": "0.0.17",
 		"@opencensus/exporter-zpages": "0.0.17",
 		"@opencensus/nodejs": "0.0.17",
 		"fastify-plugin": "^1.6.0",

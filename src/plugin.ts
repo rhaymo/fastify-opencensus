@@ -1,4 +1,4 @@
-import { Stats, StatsEventListener, Tracing } from '@opencensus/core';
+import { Stats, StatsEventListener } from '@opencensus/core';
 
 export interface HTTPMetric {
   /**
@@ -39,11 +39,6 @@ export interface FastifyOpenCensus {
   client: Stats;
 
   /**
-   * tracing of opencensus
-   */
-  tracing: Tracing;
-
-  /**
    * Expose register clear function if register was provided
    */
   clearRegister?(): void;
@@ -65,23 +60,6 @@ export interface PluginOptions {
    * @default true
    */
   enableStats?: boolean;
-
-  /**
-   * Enable tracing for http route
-   * @default false
-   */
-  enableTracing?: boolean;
-
-  /**
-   * Tracing options
-   */
-  tracingOptions?: {};
-
-  /**
-   * If this parameter is present, zPages server is enabled
-   * @default false
-   */
-  zPagesOptions?: {};
 
   /**
    * Groups status code labels by first digit 200 -> 2XX
@@ -108,11 +86,6 @@ export interface PluginOptions {
   stats?: Stats;
 
   /**
-   * opencensus tracing object
-   */
-  tracing?: Tracing;
-
-  /**
    * Metrics prefix
    */
   prefix?: string;
@@ -126,6 +99,4 @@ export interface PluginOptions {
   metrics?: Metrics;
 
   metricsExporter?: Array<StatsEventListener>;
-
-  tracingExporter?: Array<Tracing['exporter']>;
 }
