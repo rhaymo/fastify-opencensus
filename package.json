@@ -23,7 +23,7 @@
 		"scripts": {
 			"prerelease": "npm run test",
 			"postbump": "echo Version: v$npm_package_version",
-			"posttag": "git push --follow-tags origin $npm_package_config_releaseBranch"
+			"posttag1": "git push --follow-tags origin $npm_package_config_releaseBranch"
 		}
 	},
 	"scripts": {
@@ -33,7 +33,7 @@
 		"unit": "jest",
 		"build": "tsc",
 		"prerelease": "npm run typedoc",
-		"release": "git add -A && standard-version -A",
+		"release": "git add -A && standard-version -a",
 		"typedoc": "rm -rf ./docs/* && typedoc --excludeExternals --name \"$npm_package_name\" --readme none --mode file --includeDeclarations --theme markdown --out ./docs"
 	},
 	"repository": {
