@@ -59,6 +59,7 @@
 	"devDependencies": {
 		"@types/jest": "^24.0.15",
 		"@types/node": "^12.0.0",
+		"coveralls": "^3.0.6",
 		"eslint": "^6.0.0",
 		"eslint-config-google": "^0.13.0",
 		"fastify": "^2.8.0",
@@ -66,7 +67,6 @@
 		"jest": "^24.8.0",
 		"lint-staged": "^7.0.0",
 		"prettier": "1.17.1",
-		"replace": "^1.1.0",
 		"standard-version": "^6.0.0",
 		"ts-jest": "^24.0.2",
 		"ts-node": "^8.3.0",
