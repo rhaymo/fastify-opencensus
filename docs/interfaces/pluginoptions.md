@@ -1,189 +1,141 @@
-**[fastify-opencensus](../README.md)**
-
-[Globals](../README.md) › [PluginOptions](pluginoptions.md)
+[fastify-opencensus](../README.md) › [PluginOptions](pluginoptions.md)
 
 # Interface: PluginOptions
 
 ## Hierarchy
 
-* **PluginOptions**
+- **PluginOptions**
 
 ## Index
 
 ### Properties
 
-* [blacklist](pluginoptions.md#optional-blacklist)
-* [enableDefaultMetrics](pluginoptions.md#optional-enabledefaultmetrics)
-* [enableStats](pluginoptions.md#optional-enablestats)
-* [enableTracing](pluginoptions.md#optional-enabletracing)
-* [endpoint](pluginoptions.md#optional-endpoint)
-* [groupStatusCodes](pluginoptions.md#optional-groupstatuscodes)
-* [interval](pluginoptions.md#optional-interval)
-* [metrics](pluginoptions.md#optional-metrics)
-* [metricsExporter](pluginoptions.md#optional-metricsexporter)
-* [pluginName](pluginoptions.md#optional-pluginname)
-* [prefix](pluginoptions.md#optional-prefix)
-* [register](pluginoptions.md#optional-register)
-* [tracing](pluginoptions.md#optional-tracing)
-* [tracingExporter](pluginoptions.md#optional-tracingexporter)
-* [zPagesOptions](pluginoptions.md#optional-zpagesoptions)
+- [blacklist](pluginoptions.md#optional-blacklist)
+- [enableDefaultMetrics](pluginoptions.md#optional-enabledefaultmetrics)
+- [enableStats](pluginoptions.md#optional-enablestats)
+- [endpoint](pluginoptions.md#optional-endpoint)
+- [groupStatusCodes](pluginoptions.md#optional-groupstatuscodes)
+- [interval](pluginoptions.md#optional-interval)
+- [metrics](pluginoptions.md#optional-metrics)
+- [metricsExporter](pluginoptions.md#optional-metricsexporter)
+- [pluginName](pluginoptions.md#optional-pluginname)
+- [prefix](pluginoptions.md#optional-prefix)
+- [stats](pluginoptions.md#optional-stats)
 
 ## Properties
 
 ### `Optional` blacklist
 
-• **blacklist**? : *RegExp | Array‹string› | string*
+• **blacklist**? : _RegExp | Array‹string› | string_
 
-*Defined in [plugin.ts:99](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L99)*
+_Defined in [plugin.ts:82](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L82)_
 
 Routes blacklist that will be excluded from metrics collection
 
-___
+---
 
 ### `Optional` enableDefaultMetrics
 
-• **enableDefaultMetrics**? : *undefined | false | true*
+• **enableDefaultMetrics**? : _undefined | false | true_
 
-*Defined in [plugin.ts:61](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L61)*
+_Defined in [plugin.ts:56](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L56)_
 
 Enable default nodejs metrics
 
 **`default`** true
 
-___
+---
 
 ### `Optional` enableStats
 
-• **enableStats**? : *undefined | false | true*
+• **enableStats**? : _undefined | false | true_
 
-*Defined in [plugin.ts:67](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L67)*
+_Defined in [plugin.ts:62](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L62)_
 
 Enable stats metrics for http route
 
 **`default`** true
 
-___
-
-### `Optional` enableTracing
-
-• **enableTracing**? : *undefined | false | true*
-
-*Defined in [plugin.ts:73](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L73)*
-
-Enable tracing for http route
-
-**`default`** false
-
-___
+---
 
 ### `Optional` endpoint
 
-• **endpoint**? : *undefined | string*
+• **endpoint**? : _undefined | string_
 
-*Defined in [plugin.ts:117](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L117)*
+_Defined in [plugin.ts:95](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L95)_
 
 Metrics endpoint for Prometheus
 
-___
+---
 
 ### `Optional` groupStatusCodes
 
-• **groupStatusCodes**? : *undefined | false | true*
+• **groupStatusCodes**? : _undefined | false | true_
 
-*Defined in [plugin.ts:85](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L85)*
+_Defined in [plugin.ts:68](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L68)_
 
 Groups status code labels by first digit 200 -> 2XX
 
 **`default`** false
 
-___
+---
 
 ### `Optional` interval
 
-• **interval**? : *undefined | number*
+• **interval**? : _undefined | number_
 
-*Defined in [plugin.ts:95](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L95)*
+_Defined in [plugin.ts:78](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L78)_
 
 Metrics collection interval in ms
 
 **`default`** 5000
 
-___
+---
 
 ### `Optional` metrics
 
-• **metrics**? : *[Metrics](metrics.md)*
+• **metrics**? : _[Metrics](metrics.md)_
 
-*Defined in [plugin.ts:121](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L121)*
+_Defined in [plugin.ts:99](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L99)_
 
 HTTP metrics overrides
 
-___
+---
 
 ### `Optional` metricsExporter
 
-• **metricsExporter**? : *Array‹StatsEventListener›*
+• **metricsExporter**? : _Array‹StatsEventListener›_
 
-*Defined in [plugin.ts:123](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L123)*
+_Defined in [plugin.ts:101](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L101)_
 
-___
+---
 
 ### `Optional` pluginName
 
-• **pluginName**? : *undefined | string*
+• **pluginName**? : _undefined | string_
 
-*Defined in [plugin.ts:90](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L90)*
+_Defined in [plugin.ts:73](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L73)_
 
 Plugin name that will be registered in fastify
 
 **`default`** opencensus
 
-___
+---
 
 ### `Optional` prefix
 
-• **prefix**? : *undefined | string*
+• **prefix**? : _undefined | string_
 
-*Defined in [plugin.ts:113](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L113)*
+_Defined in [plugin.ts:91](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L91)_
 
 Metrics prefix
 
-___
+---
 
-### `Optional` register
+### `Optional` stats
 
-• **register**? : *Stats*
+• **stats**? : _Stats_
 
-*Defined in [plugin.ts:103](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L103)*
+_Defined in [plugin.ts:86](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L86)_
 
 opencensus registry for default metrics and route metrics
-
-___
-
-### `Optional` tracing
-
-• **tracing**? : *Tracing*
-
-*Defined in [plugin.ts:108](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L108)*
-
-opencensus tracing object
-
-___
-
-### `Optional` tracingExporter
-
-• **tracingExporter**? : *Array‹Exporter›*
-
-*Defined in [plugin.ts:125](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L125)*
-
-___
-
-### `Optional` zPagesOptions
-
-• **zPagesOptions**? : *undefined | __type*
-
-*Defined in [plugin.ts:79](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L79)*
-
-If this parameter is present, zPages server is enabled
-
-**`default`** false

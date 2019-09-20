@@ -1,6 +1,4 @@
-**[fastify-opencensus](README.md)**
-
-[Globals](README.md)
+[fastify-opencensus](README.md)
 
 # fastify-opencensus
 
@@ -8,141 +6,135 @@
 
 ### Modules
 
-* ["fastify"](modules/_fastify_.md)
+- ["fastify"](modules/_fastify_.md)
 
 ### Classes
 
-* [OpenCensusMetrics](classes/opencensusmetrics.md)
+- [OpenCensusMetrics](classes/opencensusmetrics.md)
 
 ### Interfaces
 
-* [Exporters](interfaces/exporters.md)
-* [FastifyOpenCensus](interfaces/fastifyopencensus.md)
-* [HTTPMetric](interfaces/httpmetric.md)
-* [Metrics](interfaces/metrics.md)
-* [PluginOptions](interfaces/pluginoptions.md)
+- [FastifyOpenCensus](interfaces/fastifyopencensus.md)
+- [HTTPMetric](interfaces/httpmetric.md)
+- [Metrics](interfaces/metrics.md)
+- [PluginOptions](interfaces/pluginoptions.md)
 
 ### Functions
 
-* [collectMetricsForUrl](README.md#const-collectmetricsforurl)
-* [fastifyOpenCensusPlugin](README.md#const-fastifyopencensusplugin)
-* [sinceInMilliseconds](README.md#sinceinmilliseconds)
+- [collectMetricsForUrl](README.md#const-collectmetricsforurl)
+- [fastifyOpenCensusPlugin](README.md#const-fastifyopencensusplugin)
+- [sinceInMilliseconds](README.md#sinceinmilliseconds)
 
 ### Object literals
 
-* [errorTagKey](README.md#const-errortagkey)
-* [methodTagKey](README.md#const-methodtagkey)
-* [statusTagKey](README.md#const-statustagkey)
+- [errorTagKey](README.md#const-errortagkey)
+- [methodTagKey](README.md#const-methodtagkey)
+- [statusTagKey](README.md#const-statustagkey)
 
 ## Functions
 
 ### `Const` collectMetricsForUrl
 
-▸ **collectMetricsForUrl**(`blacklist`: RegExp | Array‹string› | string | undefined, `url`: string): *boolean*
+▸ **collectMetricsForUrl**(`blacklist`: RegExp | Array‹string› | string | undefined, `url`: string): _boolean_
 
-Defined in util.ts:1
+_Defined in [util.ts:1](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/util.ts#L1)_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`blacklist` | RegExp &#124; Array‹string› &#124; string &#124; undefined |
-`url` | string |
+| Name        | Type                                                       |
+| ----------- | ---------------------------------------------------------- |
+| `blacklist` | RegExp &#124; Array‹string› &#124; string &#124; undefined |
+| `url`       | string                                                     |
 
-**Returns:** *boolean*
+**Returns:** _boolean_
 
-___
+---
 
 ### `Const` fastifyOpenCensusPlugin
 
-▸ **fastifyOpenCensusPlugin**(`fastify`: FastifyInstance, `__namedParameters`: object, `next`: fastifyPlugin.nextCallback): *void*
+▸ **fastifyOpenCensusPlugin**(`fastify`: FastifyInstance, `__namedParameters`: object, `next`: fastifyPlugin.nextCallback): _void_
 
-*Defined in [index.ts:46](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/index.ts#L46)*
+_Defined in [index.ts:46](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/index.ts#L46)_
 
 Fastify OpenCensus plugin
 
 **Parameters:**
 
-▪ **fastify**: *FastifyInstance*
+▪ **fastify**: _FastifyInstance_
 
-▪`Default value`  **__namedParameters**: *object*=  {}
+▪`Default value` **\_\_namedParameters**: _object_= {}
 
-Name | Type | Default |
------- | ------ | ------ |
-`blacklist` | undefined &#124; string &#124; RegExp &#124; string[] | - |
-`enableDefaultMetrics` | boolean | true |
-`enableStats` | boolean | true |
-`enableTracing` | boolean | false |
-`endpoint` | undefined &#124; string | - |
-`groupStatusCodes` | boolean | false |
-`interval` | number | 5000 |
-`metrics` | [Metrics](interfaces/metrics.md) | - |
-`metricsExporter` | undefined &#124; StatsEventListener[] | - |
-`pluginName` | string | "opencensus" |
-`prefix` | undefined &#124; string | - |
-`register` | undefined &#124; Stats | - |
-`tracing` | undefined &#124; Tracing | - |
-`tracingExporter` | undefined &#124; Exporter[] | - |
-`zPagesOptions` | undefined &#124; __type | - |
+| Name                   | Type                                                  | Default      |
+| ---------------------- | ----------------------------------------------------- | ------------ |
+| `blacklist`            | undefined &#124; string &#124; RegExp &#124; string[] | -            |
+| `enableDefaultMetrics` | boolean                                               | true         |
+| `enableStats`          | boolean                                               | true         |
+| `groupStatusCodes`     | boolean                                               | false        |
+| `interval`             | number                                                | 5000         |
+| `metrics`              | [Metrics](interfaces/metrics.md)                      | -            |
+| `metricsExporter`      | undefined &#124; StatsEventListener[]                 | -            |
+| `pluginName`           | string                                                | "opencensus" |
+| `prefix`               | undefined &#124; string                               | -            |
+| `stats`                | Stats                                                 | globalStats  |
 
-▪ **next**: *fastifyPlugin.nextCallback*
+▪ **next**: _fastifyPlugin.nextCallback_
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  sinceInMilliseconds
+### sinceInMilliseconds
 
-▸ **sinceInMilliseconds**(`startNanoseconds`: number): *number*
+▸ **sinceInMilliseconds**(`startNanoseconds`: number): _number_
 
-Defined in util.ts:19
+_Defined in [util.ts:19](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/util.ts#L19)_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`startNanoseconds` | number |
+| Name               | Type   |
+| ------------------ | ------ |
+| `startNanoseconds` | number |
 
-**Returns:** *number*
+**Returns:** _number_
 
 ## Object literals
 
 ### `Const` errorTagKey
 
-### ▪ **errorTagKey**: *object*
+### ▪ **errorTagKey**: _object_
 
-Defined in stat.ts:8
+_Defined in [stat.ts:8](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L8)_
 
-###  name
+### name
 
-• **name**: *string* = "route"
+• **name**: _string_ = "route"
 
-Defined in stat.ts:8
+_Defined in [stat.ts:8](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L8)_
 
-___
+---
 
 ### `Const` methodTagKey
 
-### ▪ **methodTagKey**: *object*
+### ▪ **methodTagKey**: _object_
 
-Defined in stat.ts:6
+_Defined in [stat.ts:6](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L6)_
 
-###  name
+### name
 
-• **name**: *string* = "method"
+• **name**: _string_ = "method"
 
-Defined in stat.ts:6
+_Defined in [stat.ts:6](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L6)_
 
-___
+---
 
 ### `Const` statusTagKey
 
-### ▪ **statusTagKey**: *object*
+### ▪ **statusTagKey**: _object_
 
-Defined in stat.ts:7
+_Defined in [stat.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L7)_
 
-###  name
+### name
 
-• **name**: *string* = "status_code"
+• **name**: _string_ = "status_code"
 
-Defined in stat.ts:7
+_Defined in [stat.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L7)_

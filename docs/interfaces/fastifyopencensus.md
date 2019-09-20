@@ -1,16 +1,14 @@
-**[fastify-opencensus](../README.md)**
-
-[Globals](../README.md) › [FastifyOpenCensus](fastifyopencensus.md)
+[fastify-opencensus](../README.md) › [FastifyOpenCensus](fastifyopencensus.md)
 
 # Interface: FastifyOpenCensus
 
 ## Hierarchy
 
-* **FastifyOpenCensus**
+- **FastifyOpenCensus**
 
 ## Indexable
 
-* \[ **key**: *string*\]: any
+- \[ **key**: _string_\]: any
 
 Additional objects to store your metrics, registries, etc.
 
@@ -18,41 +16,30 @@ Additional objects to store your metrics, registries, etc.
 
 ### Properties
 
-* [client](fastifyopencensus.md#client)
-* [tracing](fastifyopencensus.md#tracing)
+- [client](fastifyopencensus.md#client)
 
 ### Methods
 
-* [clearRegister](fastifyopencensus.md#optional-clearregister)
+- [clearRegister](fastifyopencensus.md#optional-clearregister)
 
 ## Properties
 
-###  client
+### client
 
-• **client**: *Stats*
+• **client**: _Stats_
 
-*Defined in [plugin.ts:39](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L39)*
+_Defined in [plugin.ts:39](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L39)_
 
 global Stats of opencensus
-
-___
-
-###  tracing
-
-• **tracing**: *Tracing*
-
-*Defined in [plugin.ts:44](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L44)*
-
-tracing of opencensus
 
 ## Methods
 
 ### `Optional` clearRegister
 
-▸ **clearRegister**(): *void*
+▸ **clearRegister**(): _void_
 
-*Defined in [plugin.ts:49](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L49)*
+_Defined in [plugin.ts:44](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L44)_
 
 Expose register clear function if register was provided
 
-**Returns:** *void*
+**Returns:** _void_

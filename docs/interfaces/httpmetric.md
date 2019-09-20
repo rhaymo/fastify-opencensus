@@ -1,47 +1,45 @@
-**[fastify-opencensus](../README.md)**
-
-[Globals](../README.md) › [HTTPMetric](httpmetric.md)
+[fastify-opencensus](../README.md) › [HTTPMetric](httpmetric.md)
 
 # Interface: HTTPMetric
 
 ## Hierarchy
 
-* **HTTPMetric**
+- **HTTPMetric**
 
 ## Index
 
 ### Properties
 
-* [buckets](httpmetric.md#optional-buckets)
-* [desc](httpmetric.md#optional-desc)
-* [name](httpmetric.md#optional-name)
+- [buckets](httpmetric.md#optional-buckets)
+- [desc](httpmetric.md#optional-desc)
+- [name](httpmetric.md#optional-name)
 
 ## Properties
 
 ### `Optional` buckets
 
-• **buckets**? : *Array‹number›*
+• **buckets**? : _Array‹number›_
 
-*Defined in [plugin.ts:15](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L15)*
+_Defined in [plugin.ts:15](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L15)_
 
 Histogram/Summary buckets
 
-___
+---
 
 ### `Optional` desc
 
-• **desc**? : *undefined | string*
+• **desc**? : _undefined | string_
 
-*Defined in [plugin.ts:11](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L11)*
+_Defined in [plugin.ts:11](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L11)_
 
 Metric description
 
-___
+---
 
 ### `Optional` name
 
-• **name**? : *undefined | string*
+• **name**? : _undefined | string_
 
-*Defined in [plugin.ts:7](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L7)*
+_Defined in [plugin.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L7)_
 
 Metric name

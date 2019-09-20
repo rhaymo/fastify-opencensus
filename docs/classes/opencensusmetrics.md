@@ -1,132 +1,92 @@
-**[fastify-opencensus](../README.md)**
-
-[Globals](../README.md) › [OpenCensusMetrics](opencensusmetrics.md)
+[fastify-opencensus](../README.md) › [OpenCensusMetrics](opencensusmetrics.md)
 
 # Class: OpenCensusMetrics
 
 ## Hierarchy
 
-* **OpenCensusMetrics**
+- **OpenCensusMetrics**
 
 ## Index
 
 ### Constructors
 
-* [constructor](opencensusmetrics.md#constructor)
+- [constructor](opencensusmetrics.md#constructor)
 
 ### Properties
 
-* [mLatency](opencensusmetrics.md#mlatency)
-* [stats](opencensusmetrics.md#stats)
-* [tracing](opencensusmetrics.md#tracing)
+- [mLatency](opencensusmetrics.md#mlatency)
+- [stats](opencensusmetrics.md#stats)
 
 ### Methods
 
-* [createMetrics](opencensusmetrics.md#createmetrics)
-* [recordLatencyMeasurement](opencensusmetrics.md#recordlatencymeasurement)
-* [startTracing](opencensusmetrics.md#starttracing)
-* [startZPagesServer](opencensusmetrics.md#startzpagesserver)
+- [createMetrics](opencensusmetrics.md#createmetrics)
+- [recordLatencyMeasurement](opencensusmetrics.md#recordlatencymeasurement)
 
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new OpenCensusMetrics**(`_stats`: Stats, `_tracing`: Tracing, `exporters?`: [Exporters](../interfaces/exporters.md)): *[OpenCensusMetrics](opencensusmetrics.md)*
+\+ **new OpenCensusMetrics**(`_stats`: Stats, `metricsExporters?`: Array‹StatsEventListener›): _[OpenCensusMetrics](opencensusmetrics.md)_
 
-Defined in stat.ts:20
+_Defined in [stat.ts:12](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L12)_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`_stats` | Stats |
-`_tracing` | Tracing |
-`exporters?` | [Exporters](../interfaces/exporters.md) |
+| Name                | Type                      |
+| ------------------- | ------------------------- |
+| `_stats`            | Stats                     |
+| `metricsExporters?` | Array‹StatsEventListener› |
 
-**Returns:** *[OpenCensusMetrics](opencensusmetrics.md)*
+**Returns:** _[OpenCensusMetrics](opencensusmetrics.md)_
 
 ## Properties
 
-###  mLatency
+### mLatency
 
-• **mLatency**: *Measure*
+• **mLatency**: _Measure_
 
-Defined in stat.ts:18
+_Defined in [stat.ts:11](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L11)_
 
-___
+---
 
-###  stats
+### stats
 
-• **stats**: *Stats*
+• **stats**: _Stats_
 
-Defined in stat.ts:19
-
-___
-
-###  tracing
-
-• **tracing**: *Tracing*
-
-Defined in stat.ts:20
+_Defined in [stat.ts:12](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L12)_
 
 ## Methods
 
-###  createMetrics
+### createMetrics
 
-▸ **createMetrics**(`metrics`: [Metrics](../interfaces/metrics.md), `_prefix?`: undefined | string): *void*
+▸ **createMetrics**(`metrics`: [Metrics](../interfaces/metrics.md), `_prefix?`: undefined | string): _void_
 
-Defined in stat.ts:36
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`metrics` | [Metrics](../interfaces/metrics.md) |
-`_prefix?` | undefined &#124; string |
-
-**Returns:** *void*
-
-___
-
-###  recordLatencyMeasurement
-
-▸ **recordLatencyMeasurement**(`_value`: number, `method`: string, `statusCode`: string | number, `routeId`: string): *void*
-
-Defined in stat.ts:73
+_Defined in [stat.ts:22](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L22)_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`_value` | number |
-`method` | string |
-`statusCode` | string &#124; number |
-`routeId` | string |
+| Name       | Type                                |
+| ---------- | ----------------------------------- |
+| `metrics`  | [Metrics](../interfaces/metrics.md) |
+| `_prefix?` | undefined &#124; string             |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  startTracing
+### recordLatencyMeasurement
 
-▸ **startTracing**(): *void*
+▸ **recordLatencyMeasurement**(`_value`: number, `method`: string, `statusCode`: string | number, `routeId`: string): _void_
 
-Defined in stat.ts:85
-
-**Returns:** *void*
-
-___
-
-###  startZPagesServer
-
-▸ **startZPagesServer**(`options`: any): *void*
-
-Defined in stat.ts:89
+_Defined in [stat.ts:59](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L59)_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`options` | any |
+| Name         | Type                 |
+| ------------ | -------------------- |
+| `_value`     | number               |
+| `method`     | string               |
+| `statusCode` | string &#124; number |
+| `routeId`    | string               |
 
-**Returns:** *void*
+**Returns:** _void_

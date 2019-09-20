@@ -1,47 +1,45 @@
-**[fastify-opencensus](../README.md)**
-
-[Globals](../README.md) › [Metrics](metrics.md)
+[fastify-opencensus](../README.md) › [Metrics](metrics.md)
 
 # Interface: Metrics
 
 ## Hierarchy
 
-* **Metrics**
+- **Metrics**
 
 ## Index
 
 ### Properties
 
-* [count](metrics.md#optional-count)
-* [distribution](metrics.md#optional-distribution)
-* [sum](metrics.md#optional-sum)
+- [count](metrics.md#optional-count)
+- [distribution](metrics.md#optional-distribution)
+- [sum](metrics.md#optional-sum)
 
 ## Properties
 
 ### `Optional` count
 
-• **count**? : *[HTTPMetric](httpmetric.md)*
+• **count**? : _[HTTPMetric](httpmetric.md)_
 
-*Defined in [plugin.ts:27](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L27)*
+_Defined in [plugin.ts:27](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L27)_
 
 http request count
 
-___
+---
 
 ### `Optional` distribution
 
-• **distribution**? : *[HTTPMetric](httpmetric.md)*
+• **distribution**? : _[HTTPMetric](httpmetric.md)_
 
-*Defined in [plugin.ts:22](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L22)*
+_Defined in [plugin.ts:22](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L22)_
 
 http request durations
 
-___
+---
 
 ### `Optional` sum
 
-• **sum**? : *[HTTPMetric](httpmetric.md)*
+• **sum**? : _[HTTPMetric](httpmetric.md)_
 
-*Defined in [plugin.ts:32](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/plugin.ts#L32)*
+_Defined in [plugin.ts:32](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L32)_
 
 http request duration sum

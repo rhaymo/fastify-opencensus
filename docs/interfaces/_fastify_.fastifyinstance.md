@@ -1,6 +1,4 @@
-**[fastify-opencensus](../README.md)**
-
-[Globals](../README.md) › [&quot;fastify&quot;](../modules/_fastify_.md) › [FastifyInstance](_fastify_.fastifyinstance.md)
+[fastify-opencensus](../README.md) › ["fastify"](../modules/_fastify_.md) › [FastifyInstance](_fastify_.fastifyinstance.md)
 
 # Interface: FastifyInstance <**HttpServer, HttpRequest, HttpResponse**>
 
@@ -14,20 +12,20 @@
 
 ## Hierarchy
 
-* **FastifyInstance**
+- **FastifyInstance**
 
 ## Index
 
 ### Properties
 
-* [metrics](_fastify_.fastifyinstance.md#metrics)
+- [metrics](_fastify_.fastifyinstance.md#metrics)
 
 ## Properties
 
-###  metrics
+### metrics
 
-• **metrics**: *[FastifyOpenCensus](fastifyopencensus.md)*
+• **metrics**: _[FastifyOpenCensus](fastifyopencensus.md)_
 
-*Defined in [index.ts:19](https://github.com/SkeLLLa/fastify-metrics/blob/38505d8/src/index.ts#L19)*
+_Defined in [index.ts:19](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/index.ts#L19)_
 
 Metrics interface
