@@ -28,7 +28,7 @@
 
 \+ **new OpenCensusMetrics**(`_stats`: Stats, `metricsExporters?`: Array‹StatsEventListener›): _[OpenCensusMetrics](opencensusmetrics.md)_
 
-_Defined in [stat.ts:12](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L12)_
+_Defined in [stat.ts:12](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L12)_
 
 **Parameters:**
 
@@ -45,7 +45,7 @@ _Defined in [stat.ts:12](https://github.com/rhaymo/fastify-opencensus/blob/a5314
 
 • **mLatency**: _Measure_
 
-_Defined in [stat.ts:11](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L11)_
+_Defined in [stat.ts:11](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L11)_
 
 ---
 
@@ -53,7 +53,7 @@ _Defined in [stat.ts:11](https://github.com/rhaymo/fastify-opencensus/blob/a5314
 
 • **stats**: _Stats_
 
-_Defined in [stat.ts:12](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L12)_
+_Defined in [stat.ts:12](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L12)_
 
 ## Methods
 
@@ -61,7 +61,7 @@ _Defined in [stat.ts:12](https://github.com/rhaymo/fastify-opencensus/blob/a5314
 
 ▸ **createMetrics**(`metrics`: [Metrics](../interfaces/metrics.md), `_prefix?`: undefined | string): _void_
 
-_Defined in [stat.ts:22](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L22)_
+_Defined in [stat.ts:22](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L22)_
 
 **Parameters:**
 
@@ -78,7 +78,7 @@ _Defined in [stat.ts:22](https://github.com/rhaymo/fastify-opencensus/blob/a5314
 
 ▸ **recordLatencyMeasurement**(`_value`: number, `method`: string, `statusCode`: string | number, `routeId`: string): _void_
 
-_Defined in [stat.ts:59](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L59)_
+_Defined in [stat.ts:59](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L59)_
 
 **Parameters:**
 

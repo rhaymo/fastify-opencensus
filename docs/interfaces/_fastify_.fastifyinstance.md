@@ -26,6 +26,6 @@
 
 • **metrics**: _[FastifyOpenCensus](fastifyopencensus.md)_
 
-_Defined in [index.ts:19](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/index.ts#L19)_
+_Defined in [index.ts:19](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/index.ts#L19)_
 
 Metrics interface

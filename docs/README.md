@@ -37,7 +37,7 @@
 
 ▸ **collectMetricsForUrl**(`blacklist`: RegExp | Array‹string› | string | undefined, `url`: string): _boolean_
 
-_Defined in [util.ts:1](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/util.ts#L1)_
+_Defined in [util.ts:1](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/util.ts#L1)_
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ _Defined in [util.ts:1](https://github.com/rhaymo/fastify-opencensus/blob/a53145
 
 ▸ **fastifyOpenCensusPlugin**(`fastify`: FastifyInstance, `__namedParameters`: object, `next`: fastifyPlugin.nextCallback): _void_
 
-_Defined in [index.ts:46](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/index.ts#L46)_
+_Defined in [index.ts:46](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/index.ts#L46)_
 
 Fastify OpenCensus plugin
 
@@ -87,7 +87,7 @@ Fastify OpenCensus plugin
 
 ▸ **sinceInMilliseconds**(`startNanoseconds`: number): _number_
 
-_Defined in [util.ts:19](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/util.ts#L19)_
+_Defined in [util.ts:19](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/util.ts#L19)_
 
 **Parameters:**
 
@@ -103,13 +103,13 @@ _Defined in [util.ts:19](https://github.com/rhaymo/fastify-opencensus/blob/a5314
 
 ### ▪ **errorTagKey**: _object_
 
-_Defined in [stat.ts:8](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L8)_
+_Defined in [stat.ts:8](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L8)_
 
 ### name
 
 • **name**: _string_ = "route"
 
-_Defined in [stat.ts:8](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L8)_
+_Defined in [stat.ts:8](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L8)_
 
 ---
 
@@ -117,13 +117,13 @@ _Defined in [stat.ts:8](https://github.com/rhaymo/fastify-opencensus/blob/a53145
 
 ### ▪ **methodTagKey**: _object_
 
-_Defined in [stat.ts:6](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L6)_
+_Defined in [stat.ts:6](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L6)_
 
 ### name
 
 • **name**: _string_ = "method"
 
-_Defined in [stat.ts:6](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L6)_
+_Defined in [stat.ts:6](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L6)_
 
 ---
 
@@ -131,10 +131,10 @@ _Defined in [stat.ts:6](https://github.com/rhaymo/fastify-opencensus/blob/a53145
 
 ### ▪ **statusTagKey**: _object_
 
-_Defined in [stat.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L7)_
+_Defined in [stat.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L7)_
 
 ### name
 
 • **name**: _string_ = "status_code"
 
-_Defined in [stat.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/stat.ts#L7)_
+_Defined in [stat.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/stat.ts#L7)_

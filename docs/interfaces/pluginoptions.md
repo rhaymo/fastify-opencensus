@@ -28,7 +28,7 @@
 
 • **blacklist**? : _RegExp | Array‹string› | string_
 
-_Defined in [plugin.ts:82](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L82)_
+_Defined in [plugin.ts:82](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L82)_
 
 Routes blacklist that will be excluded from metrics collection
 
@@ -38,7 +38,7 @@ Routes blacklist that will be excluded from metrics collection
 
 • **enableDefaultMetrics**? : _undefined | false | true_
 
-_Defined in [plugin.ts:56](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L56)_
+_Defined in [plugin.ts:56](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L56)_
 
 Enable default nodejs metrics
 
@@ -50,7 +50,7 @@ Enable default nodejs metrics
 
 • **enableStats**? : _undefined | false | true_
 
-_Defined in [plugin.ts:62](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L62)_
+_Defined in [plugin.ts:62](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L62)_
 
 Enable stats metrics for http route
 
@@ -62,7 +62,7 @@ Enable stats metrics for http route
 
 • **endpoint**? : _undefined | string_
 
-_Defined in [plugin.ts:95](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L95)_
+_Defined in [plugin.ts:95](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L95)_
 
 Metrics endpoint for Prometheus
 
@@ -72,7 +72,7 @@ Metrics endpoint for Prometheus
 
 • **groupStatusCodes**? : _undefined | false | true_
 
-_Defined in [plugin.ts:68](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L68)_
+_Defined in [plugin.ts:68](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L68)_
 
 Groups status code labels by first digit 200 -> 2XX
 
@@ -84,7 +84,7 @@ Groups status code labels by first digit 200 -> 2XX
 
 • **interval**? : _undefined | number_
 
-_Defined in [plugin.ts:78](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L78)_
+_Defined in [plugin.ts:78](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L78)_
 
 Metrics collection interval in ms
 
@@ -96,7 +96,7 @@ Metrics collection interval in ms
 
 • **metrics**? : _[Metrics](metrics.md)_
 
-_Defined in [plugin.ts:99](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L99)_
+_Defined in [plugin.ts:99](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L99)_
 
 HTTP metrics overrides
 
@@ -106,7 +106,7 @@ HTTP metrics overrides
 
 • **metricsExporter**? : _Array‹StatsEventListener›_
 
-_Defined in [plugin.ts:101](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L101)_
+_Defined in [plugin.ts:101](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L101)_
 
 ---
 
@@ -114,7 +114,7 @@ _Defined in [plugin.ts:101](https://github.com/rhaymo/fastify-opencensus/blob/a5
 
 • **pluginName**? : _undefined | string_
 
-_Defined in [plugin.ts:73](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L73)_
+_Defined in [plugin.ts:73](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L73)_
 
 Plugin name that will be registered in fastify
 
@@ -126,7 +126,7 @@ Plugin name that will be registered in fastify
 
 • **prefix**? : _undefined | string_
 
-_Defined in [plugin.ts:91](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L91)_
+_Defined in [plugin.ts:91](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L91)_
 
 Metrics prefix
 
@@ -136,6 +136,6 @@ Metrics prefix
 
 • **stats**? : _Stats_
 
-_Defined in [plugin.ts:86](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L86)_
+_Defined in [plugin.ts:86](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L86)_
 
 opencensus registry for default metrics and route metrics

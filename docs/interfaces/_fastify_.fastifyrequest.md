@@ -30,4 +30,4 @@
 
 • **metrics**? : _undefined | object_
 
-_Defined in [index.ts:28](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/index.ts#L28)_
+_Defined in [index.ts:28](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/index.ts#L28)_

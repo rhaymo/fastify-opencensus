@@ -20,7 +20,7 @@
 
 • **buckets**? : _Array‹number›_
 
-_Defined in [plugin.ts:15](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L15)_
+_Defined in [plugin.ts:15](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L15)_
 
 Histogram/Summary buckets
 
@@ -30,7 +30,7 @@ Histogram/Summary buckets
 
 • **desc**? : _undefined | string_
 
-_Defined in [plugin.ts:11](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L11)_
+_Defined in [plugin.ts:11](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L11)_
 
 Metric description
 
@@ -40,6 +40,6 @@ Metric description
 
 • **name**? : _undefined | string_
 
-_Defined in [plugin.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L7)_
+_Defined in [plugin.ts:7](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L7)_
 
 Metric name

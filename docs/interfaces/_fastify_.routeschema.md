@@ -18,6 +18,6 @@
 
 • **hide**? : _undefined | false | true_
 
-_Defined in [index.ts:25](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/index.ts#L25)_
+_Defined in [index.ts:25](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/index.ts#L25)_
 
 Hides metric route from swagger/openapi documentation

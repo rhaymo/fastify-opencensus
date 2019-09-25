@@ -20,7 +20,7 @@
 
 • **count**? : _[HTTPMetric](httpmetric.md)_
 
-_Defined in [plugin.ts:27](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L27)_
+_Defined in [plugin.ts:27](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L27)_
 
 http request count
 
@@ -30,7 +30,7 @@ http request count
 
 • **distribution**? : _[HTTPMetric](httpmetric.md)_
 
-_Defined in [plugin.ts:22](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L22)_
+_Defined in [plugin.ts:22](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L22)_
 
 http request durations
 
@@ -40,6 +40,6 @@ http request durations
 
 • **sum**? : _[HTTPMetric](httpmetric.md)_
 
-_Defined in [plugin.ts:32](https://github.com/rhaymo/fastify-opencensus/blob/a531454/src/plugin.ts#L32)_
+_Defined in [plugin.ts:32](https://github.com/rhaymo/fastify-opencensus/blob/a41dab0/src/plugin.ts#L32)_
 
 http request duration sum
