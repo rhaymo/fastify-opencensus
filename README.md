@@ -100,18 +100,18 @@ Default values:
 {
   distribution: {
     name: 'http_request_duration_seconds',
-    help: 'request duration in seconds',
+    desc: 'request duration in seconds',
     labelNames: ['status_code', 'method', 'route'],
     buckets: [0.05, 0.1, 0.5, 1, 3, 5, 10],
   },
   sum: {
     name: 'http_sum_request_duration_seconds',
-    help: 'Sum of durations of http requests',
+    desc: 'Sum of durations of http requests',
     labelNames: ['status_code', 'method', 'route']
   },
   count: {
     name: 'http_request_count',
-    help: 'Counter of http requests',
+    desc: 'Counter of http requests',
     labelNames: ['status_code', 'method', 'route']
   },
 }
@@ -130,7 +130,7 @@ app.register(metricsPlugin, {metrics: {
     buckets: [0.1, 0.5, 1, 3, 5],
   },
   sum: {
-    help: 'custom request duration in seconds summary help'
+    desc: 'custom request duration in seconds summary help'
   },
 });
 ```
