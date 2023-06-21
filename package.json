@@ -52,8 +52,8 @@
 	},
 	"homepage": "https://github.com/rhaymo/fastify-opencensus#README",
 	"dependencies": {
-		"@opencensus/core": "^0.0.17",
-		"fastify-plugin": "^1.6.0",
+		"@opencensus/core": "^0.0.22",
+		"fastify-plugin": "^2.0.0",
 		"opencensus-default-metrics": "^0.0.2"
 	},
 	"devDependencies": {
